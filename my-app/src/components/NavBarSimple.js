@@ -11,14 +11,12 @@ class NavBarSimple extends React.Component {
     }
 
     handleClick() {
-        this.setState((prevState, prevProps) => {
-            console.log('previous state', prevState)
-            console.log('previous props', prevProps)
-            return {
-                message: prevState.message === "Hello, guest!" ? "Welcome back, user!" : "Hello, guest!",
-                buttonText: prevState.buttonText === "log in" ? "log out" : "log in",
-            }
-        })
+        this.setState((prevState) => ({
+            
+            message: prevState.message === "Hello, guest!" ? "Welcome back, user!" : "Hello, guest!",
+            buttonText: prevState.buttonText === "log in" ? "log out" : "log in",
+            
+        }), () => console.log(this.state.message))
     }
 
 
@@ -34,7 +32,6 @@ class NavBarSimple extends React.Component {
         )
     }
 }
-
 
 
 export default NavBarSimple;
